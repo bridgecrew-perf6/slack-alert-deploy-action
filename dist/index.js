@@ -34143,8 +34143,9 @@ async function slack_alert_deploy(channel, schedule, release_version, milestones
     let options;
     options = {
         'method': 'POST',
-        // 'url': 'https://ops.co-workerhou.se/api/v1/slack/',
-        'url': 'http://localhost:8000/api/v1/slack/',
+        // 'url': 'https://ops.co-workerhou.se/api/v1/slack/deploy/',
+        'url': 'https://ops-dev.dailyhou.se/api/v1/slack/deploy/',
+        // 'url': 'http://localhost:8000/api/v1/slack/',
         'headers': {
             'accept': 'application/json',
             'Authorization': `Token ${getAuthToken()}`
@@ -34561,19 +34562,19 @@ const slack_deploy_alert = __nccwpck_require__(5701)
 
 
 async function run(){
-    // const channel = core.getInput('channel', {required: true})
-    // const schedule = core.getInput('schedule', {required: true})
-    // const release_version = core.getInput('release_version', {required: true})
-    // const milestones = core.getInput('milestones', {required: true})
-    // const driver = core.getInput('driver', {required: true})
-    // const description = core.getInput('description')
+    const channel = core.getInput('channel', {required: true})
+    const schedule = core.getInput('schedule', {required: true})
+    const release_version = core.getInput('release_version', {required: true})
+    const milestones = core.getInput('milestones', {required: true})
+    const driver = core.getInput('driver', {required: true})
+    const description = core.getInput('description')
 
-    const channel = '#dev_slack_notification'
-    const schedule = '1'
-    const release_version = '2'
-    const milestones = '3'
-    const driver = '4'
-    const description = '6'
+    // const channel = '#dev_slack_notification'
+    // const schedule = '1'
+    // const release_version = '2'
+    // const milestones = '3'
+    // const driver = '4'
+    // const description = '6'
 
     await slack_deploy_alert.slack_alert_deploy(channel, schedule, release_version, milestones, driver, description)
 
