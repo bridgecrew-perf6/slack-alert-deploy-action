@@ -13,7 +13,8 @@ export async function slack_alert_deploy(channel, schedule, release_version, mil
     let options;
     options = {
         'method': 'POST',
-        'url': 'https://ops.co-workerhou.se/api/v1/slack/deploy/',
+        // 'url': 'https://ops.co-workerhou.se/api/v1/slack/deploy/',
+        'url': 'https://ops-dev.dailyhou.se/api/v1/slack/deploy/',
         // 'url': 'http://localhost:8000/api/v1/slack/',
         'headers': {
             'accept': 'application/json',
