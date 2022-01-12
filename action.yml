@@ -1,0 +1,25 @@
+name: 'Slack Deploy Alert Action'
+description: 'Action template for slack deploy alert'
+author: 'jambam <jambam-cho@github.com>'
+inputs:
+  channel:
+    required: true
+    description: 'slack channel'
+  schedule:
+    required: true
+    description: 'deployment time'
+  release_version:
+    required: true
+    description: 'release version'
+  milestones:
+    required: true
+    description: 'milestones for release version'
+  driver:
+    required: true
+    description: 'The Person driving deploy'
+  description:
+    required: false
+    description: 'description'
+runs:
+  using: 'node12'
+  main: 'dist/index.js'

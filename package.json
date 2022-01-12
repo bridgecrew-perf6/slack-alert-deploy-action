@@ -1,0 +1,27 @@
+{
+  "name": "slack-alert-deploy-action",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "ncc build src/action.js -o dist",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bucketplace/slack-alert-deploy-action.git"
+  },
+  "author": "jambam",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bucketplace/slack-alert-deploy-action/issues"
+  },
+  "homepage": "https://github.com/bucketplace/slack-alert-deploy-action#readme",
+  "dependencies": {
+    "@actions/core": "^1.6.0",
+    "@vercel/ncc": "^0.33.1"
+  },
+  "devDependencies": {
+    "request": "^2.88.2"
+  }
+}
