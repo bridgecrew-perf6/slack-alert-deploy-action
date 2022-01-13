@@ -11,11 +11,11 @@ async function run(){
     const description = core.getInput('description')
 
     // const channel = '#dev_slack_notification'
-    // const schedule = '1'
-    // const release_version = '2'
-    // const milestones = '3'
-    // const driver = '4'
-    // const description = '6'
+    // const schedule = '2022-01-13T15:21:26Z'
+    // const release_version = 'jambam-cho-patch-13-1'
+    // const milestones = 'https://github.com/bucketplace/jambam/milestone/1'
+    // const driver = 'jambam-cho'
+    // const description = '9'
 
     await slack_deploy_alert.slack_alert_deploy(channel, schedule, release_version, milestones, driver, description)
 
