@@ -15,7 +15,7 @@ inputs:
     required: true
     description: 'milestones for release version'
   driver:
-    required: true
+    required: false
     description: 'The Person driving deploy'
   description:
     required: false
