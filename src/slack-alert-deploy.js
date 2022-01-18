@@ -9,7 +9,7 @@ function getAuthToken() {
     return token
 }
 
-export async function slack_alert_deploy(channel, schedule, release_version, milestones, driver, description){
+export async function slack_alert_deploy(channel, release_version, milestones, driver, description){
     let options;
     options = {
         'method': 'POST',
@@ -20,7 +20,6 @@ export async function slack_alert_deploy(channel, schedule, release_version, mil
         },
         formData: {
             'channel': channel,
-            'schedule': schedule,
             'release_version': release_version,
             'milestones': milestones,
             'driver': driver,

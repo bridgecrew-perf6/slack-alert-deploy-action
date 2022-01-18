@@ -5,9 +5,6 @@ inputs:
   channel:
     required: true
     description: 'slack channel'
-  schedule:
-    required: true
-    description: 'deployment time'
   release_version:
     required: true
     description: 'release version'
