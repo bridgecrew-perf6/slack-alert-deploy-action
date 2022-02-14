@@ -34139,21 +34139,23 @@ function getAuthToken() {
     return token
 }
 
-async function slack_alert_deploy(channel, release_version, milestones, driver, description){
+async function slack_alert_deploy(app_name, channel, release_version, milestones, driver, description, app_profile){
     let options;
     options = {
         'method': 'POST',
-        'url': 'https://ops.co-workerhou.se/api/v1/slack/deploy/',
+        'url': 'https://ops.co-workerhou.se/api/v1/slack-deploy/trigger/',
         'headers': {
             'accept': 'application/json',
             'Authorization': `Token ${getAuthToken()}`
         },
         formData: {
+            'app_name': app_name,
             'channel': channel,
             'release_version': release_version,
             'milestones': milestones,
             'driver': driver,
-            'description': description
+            'description': description,
+            'app_profile': app_profile,
         }
     };
     request(options, function (error, response) {
@@ -34558,13 +34560,15 @@ const slack_deploy_alert = __nccwpck_require__(5701)
 
 
 async function run(){
+    const app_name = core.getInput('app_name', {required: true})
     const channel = core.getInput('channel', {required: true})
     const release_version = core.getInput('release_version', {required: true})
     const milestones = core.getInput('milestones', {required: true})
     const driver = core.getInput('driver', {required: true})
     const description = core.getInput('description')
+    const app_profile = core.getInput('app_profile')
 
-    await slack_deploy_alert.slack_alert_deploy(channel, release_version, milestones, driver, description)
+    await slack_deploy_alert.slack_alert_deploy(app_name, channel, release_version, milestones, driver, description, app_profile)
 
 }
 

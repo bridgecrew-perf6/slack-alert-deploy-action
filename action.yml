@@ -2,6 +2,9 @@ name: 'Slack Deploy Alert Action'
 description: 'Action template for slack deploy alert'
 author: 'jambam <jambam-cho@github.com>'
 inputs:
+  app_name:
+    required: true
+    description: 'application name'
   channel:
     required: true
     description: 'slack channel'
@@ -17,6 +20,9 @@ inputs:
   description:
     required: false
     description: 'description'
+  app_profile:
+    required: false
+    description: 'application environment'
 runs:
   using: 'node12'
   main: 'dist/index.js'
